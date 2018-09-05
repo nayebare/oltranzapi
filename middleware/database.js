@@ -56,6 +56,27 @@ module.exports.selectAllBuses = async function selectAllBuses(callback) {
     });
 }
 
+/*****All the get scripts go here**** */
+module.exports.selectSpecificBus = async function selectSpecificBus(numberplate,callback) {
+  
+    const query = client.query("SELECT * FROM public.bus where numberplate= '"+numberplate+"'", (err, result) => {
+
+        if (err) {
+            callback(err, results)
+        } else {
+            query.on('row', (row) => {
+                results.push(row);
+            });
+
+            query.on('end', () => {
+                callback(err, result)
+            });
+
+        }
+
+    });
+}
+
 //get all company name
 module.exports.selectCompanies = async function selectCompanies(callback) {
     const query = client.query('SELECT * FROM public.company', (err, result) => {

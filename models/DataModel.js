@@ -39,6 +39,11 @@ module.exports.getAllBuses = function getAllBuses(callback) {
     schema.selectAllBuses(callback);
 }
 
+module.exports.getSpecificBus = function getSpecificBus(numberplate,callback) {
+    console.log("models .... get specific buses")
+    schema.selectSpecificBus(numberplate,callback);
+}
+
 module.exports.getReport = function getReport(region, callback) {
     console.log("models get .......... reoprt")
     schema.getReport(region, callback);

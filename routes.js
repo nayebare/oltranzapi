@@ -20,6 +20,7 @@ const companyController = require('./controllers/companyController.js');
 
 //route api for getting bus data from the db
 router.get('/buses/', function (req, res) {
+    ////if(//check details)
     DataController.getAllBuses((err, results) => {
         if (err) {
             res.status(400).json(err)
@@ -28,6 +29,22 @@ router.get('/buses/', function (req, res) {
         }
     });
 })
+
+//get full report of a place
+router.get('/buses/:numberplate/', jsonParser, function (req, res) {
+
+    console.log("get report   report...." + req.params.numberplate);
+
+  DataController.getSpecificBus(req.params.numberplate, (err, results) => {
+        if (err) {
+           res.status(400).json(err)
+       } else {
+   console.log(results.rows)
+      res.status(200).json(results.rows);
+    
+       }
+    });
+});
 
 //api route for getting all companies
 router.get('/companies/', function (req, res) {
