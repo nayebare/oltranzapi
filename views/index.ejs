@@ -1,0 +1,213 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<div class="container">
+    <h3>Add Bus Companies</h3>
+    <div class="form-group">
+        <form method="post" action="/buscompany/add">
+            <label>Bus Company Name:</label>
+            <input type="text" name="company_name">
+            <br/>
+            <input type="submit" value="save">
+        </form>
+
+        <hr/>
+
+        <h3>Add a bus</h3>
+
+        <form method="post" action="/bus/add">
+            <label>NumberPlate:</label>
+            <input type="text" name="bus_numberplate">
+            <br/>
+            <input type="submit" value="save">
+        </form>
+        <hr/>
+
+        <h3>Add a bus route</h3>
+
+        <form method="post" action="/route/add">
+            <label>Route Name:</label>
+            <input type="text" name="route_name">
+            <br/>
+            <input type="submit" value="save">
+        </form>
+
+        <hr/>
+
+        <h3>Add a bus stop</h3>
+
+        <form method="post" action="/bstop/add">
+            <label>Bus Stop Name:</label>
+            <input type="text" name="bus_stopname">
+            <br/>
+            <input type="submit" value="save">
+        </form>
+
+        <hr/>
+        <h3>Add a Passenger</h3>
+
+        <form method="post" action="/passenger/add">
+            <label>Name:</label>
+            <input type="text" name="passenger_name">
+            <br/>
+            <input type="submit" value="save">
+        </form>
+
+        <hr/>
+        <h3>Add a Place</h3>
+
+        <form method="post" action="/place/add">
+            <label>Name:</label>
+            <input type="text" name="place_name">
+            <br/>
+            <input type="submit" value="save">
+        </form>
+
+<hr/>
+
+<!--create places and bus stops -->
+
+        <h3>Add bus stops to location</h3>
+        <form method="post" action="/place/bstop/add">
+            <label>Bus Stop Name:</label>
+            <input type="text" name="busstop_name">
+            <br/>
+            <label>Place/Location:</label>
+            <input type="text" name="place_name">
+            <br>
+            <input type="submit" value="Add">
+        </form>
+
+<hr/>
+
+<!--create buses and companies -->
+
+<h3>Add bus to company</h3>
+<form method="post" action="/bus/company/add">
+    <label>Bus PlateName:</label>
+    <input type="text" name="bus_numberplate">
+    <br/>
+    <label>Bus Company:</label>
+    <input type="text" name="company_name">
+    <br>
+    <input type="submit" value="Add">
+</form>
+
+<hr/>
+
+
+<!--create buses and bus stops -->
+<h3>Add bus to Bus Stop </h3>
+<form method="post" action="/bus/bstop/add">
+    <label>Bus PlateName:</label>
+    <input type="text" name="bus_numberplate">
+    <br/>
+    <label>Bus Stop Name:</label>
+    <input type="text" name="busstop_name">
+    <br>
+    <label>Time:</label>
+    <input type="text" name="time">
+    <br>
+    <input type="submit" value="Add">
+</form>
+<hr/>
+
+
+<!--create buses and routes -->
+<h3>Add bus to route </h3>
+<form method="post" action="/bus/route/add">
+    <label>Bus PlateName:</label>
+    <input type="text" name="bus_numberplate">
+    <br/>
+    <label>Route Name:</label>
+    <input type="text" name="route_name">
+    <br>
+    <input type="submit" value="Add">
+</form>
+<hr/>
+
+
+<!--create buses and routes -->
+<h3>Link Passenger bus stop </h3>
+<form method="post" action="/passenger/busstop/add">
+    <label>Passenger Name:</label>
+    <input type="text" name="passenger_name">
+    <br/>
+    <label>Bus Stop Name:</label>
+    <input type="text" name="busstop_name">
+    <br>
+    <input type="submit" value="Add">
+</form>
+<hr/>
+
+
+
+<!--create buses to bus stops -->
+<h3>Link Route to  Bus Stops </h3>
+<form method="post" action="/route/busstop/add">
+    <label>Route Name:</label>
+    <input type="text" name="route_name">
+    <br/>
+    <label>Bus Stop Name:</label>
+    <input type="text" name="busstop_name">
+    <br>
+    <input type="submit" value="Add">
+</form>
+<hr/>
+
+<!--create link between one or more bus stops -->
+<h3>Link BusStop to  Bus Stop </h3>
+<form method="post" action="/busstop/busstop/add">
+    <label>Bus Stop Name:</label>
+    <input type="text" name="busstop_name1">
+    <br/>
+    <label>Bus Stop Name:</label>
+    <input type="text" name="busstop_name">
+    <br>
+    <label>Cost:</label>
+    <input type="text" name="cost">
+    <br>
+
+    <input type="submit" value="Add">
+</form>
+<hr/>
+
+
+
+<!-- to be applied later  // may be later on there is  need for more reading men
+        <h1>Movies</h1>
+        <ul>
+            <% movies.forEach(function(movie){ %>
+                <li>
+                    <%=movie.title %>
+                </li>
+
+
+                <%})%>
+        </ul>
+        <h1>Actors</h1>
+        <ul>
+            <% actors.forEach(function(actor){ %>
+                <li>
+                    <%=actor.name %>
+                </li>
+
+
+                <%})%>
+        </ul>
+    -->
+    </div>
+</div>
+
+
+</html>

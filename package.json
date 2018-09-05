@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Echo :no test specified\"&& exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.2",
+    "body-parser": "*",
+    "ejs": "^2.6.1",
+    "express": "*",
+    "express-error-handler": "^1.1.0",
+    "express-session": "^1.15.6",
+    "morgan": "*",
+    "neo4j-driver": "*",
+    "nodemailer": "^4.6.8",
+    "pg": "^6.1.0"
+  }
+}
